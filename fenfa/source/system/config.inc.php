@@ -1,0 +1,34 @@
+<?php
+ini_set('date.timezone', 'PRC');
+ini_set('default_charset', 'gbk');
+define('IN_ROOT', substr(dirname(__FILE__), 0, -13));
+define('IN_PATH', '/');
+define('IN_DBHOST', 'localhost');
+define('IN_DBUSER', 'fenfa');
+define('IN_DBPW', 'CX6wPkbKfDSKW27G');
+define('IN_DBNAME', 'fenfa');
+define('IN_DBCHARSET', 'gbk');
+define('IN_DBTABLE', 'prefix_');
+define('IN_VERSION', '4.1');
+define('IN_CHARSET', 'gbk');
+define('IN_BUILD', '20170820');
+define('IN_NAME', '二师兄');
+define('IN_KEYWORDS', '二师兄分发平台,2sx.im,企业签名,ipa,ios,ipad,iphone,app分发,免费托管,内测分发,耳朵音乐,erduo.in,Earcms,Ear Music,dynadot');
+define('IN_DESCRIPTION', '二师兄（2sx.im）为各行业提供app托管、内测应用分发服务！');
+define('IN_ICP', '备案中...');
+define('IN_MAIL', 'music@earcms.com');
+define('IN_MAILOPEN', '0');
+define('IN_MAILSMTP', 'smtp.exmail.qq.com');
+define('IN_MAILPW', '');
+define('IN_CODEOPEN', '0');
+define('IN_CODE', '123456');
+define('IN_STAT', '');
+define('IN_OPEN', '1');
+define('IN_OPENS', '本站暂时关闭维护，给您带来的不便还请谅解！');
+define('IN_WXMCHID', '1272716701');
+define('IN_WXKEY', 'Yangzi123yangzi123yangzi123yangz');
+define('IN_WXAPPID', 'wx039dc65e5500ccb8');
+define('IN_RMBPOINTS', '100');
+define('IN_REGPOINTS', '10');
+define('IN_EXT', '40*40|60*60|58*58|87*87|80*80|120*120|120*120|180*180|20*20|40*40|29*29|58*58|40*40|80*80|76*76|152*152|167*167');
+?>

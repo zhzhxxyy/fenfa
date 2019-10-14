@@ -1,0 +1,1082 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <base >
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <title>宝藏世界</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="statics/templates/yungou/css/mobile/comm.css" rel="stylesheet" type="text/css" />
+    <link href="statics/templates/yungou/css/mobile/index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="statics/templates/yungou/css/mobile/reset.css">
+    <link rel="stylesheet" href="statics/templates/yungou/css/mobile/animate.css">
+    <link rel="stylesheet" href="statics/templates/yungou/css/mobile/style.css">
+    <link rel="stylesheet" href="statics/templates/yungou/css/mobile/zdy.css">
+    <link href="statics/templates/yungou/css/mobile/main.css" rel="stylesheet" type="text/css">
+    <script src="statics/templates/yungou/js/mobile/jquery.js"></script>
+    <script src="statics/templates/yungou/js/mobile/js.cookie.js"></script>
+    <script src="statics/templates/yungou/js/mobile/lodash.js"></script>
+    <script src="statics/templates/yungou/js/mobile/response.js"></script>
+    <script src="statics/templates/yungou/js/mobile/swiper.min.js"></script>
+    <script src="statics/templates/yungou/js/mobile/countdown.js"></script>
+    <script src="statics/templates/yungou/js/mobile/simpop.min.js"></script>
+    <script src="statics/templates/yungou/js/mobile/jquery.lazyload.min.js"></script>
+    <script src="statics/templates/yungou/js/mobile/ajax.js"></script>
+    <script src="http://45.32.61.113:8996/statics/templates/yungou/js/baseurl.js"></script>
+    <script>
+    var DuoBao = {}; 
+    var __data__ = (function() {
+        return JSON.parse('{}');
+    })();
+    var __user__ = (function() {
+        return JSON.parse('{}');
+
+    })();
+    var __touchorclick__ = (function() {
+        if ('ontouchend' in document)
+            return 'touchend';
+        else
+            return 'click';
+    })();
+    //设置基础信息
+    var baseUrlServer = baseurl.replace("__","bzsj");
+     baseUrlServer =baseurl.replace("__","bzsj").replace("/a","/one_test.a")  ;
+   // baseUrlServer = "http://127.0.0.1:8081/";
+    localStorage.setItem('baseUrlServer', baseUrlServer );
+    //localStorage.getItem('baseUrlServer')
+    </script>
+</head>
+<style>
+.img-topright {
+    padding-right: 0.8rem;
+    padding-top: 1rem;
+    height: 3.5rem;
+    width: auto;
+    float: right;
+}
+</style>
+
+<body>
+
+<div id="light" class="white_content" style="background: #fff;">
+    <header class="header" style="width: 100%;z-index: 99999999;background: #edebeb;border-bottom: 1px solid #d8d8d8;">
+
+        <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
+            <div class="head_search b_red" style="position: relative;margin: 0 50px 0 30px;">
+                <input style="background: #fff;margin-top: 9px;" id="txtSearch" class="init" placeholder="输入'购物卡'试一试" type="text">
+                <!--
+                <span style="">
+            <a href="../../../index.php/mobile/mobile/search/苹果">苹果</a>
+            <a href="../../../index.php/mobile/mobile/search/购物卡" style="width: 45px;">购物卡</a>
+          </span>
+          -->
+                <a class="search_submit"href="#"> <i class="ico_search"></i>
+            </a>
+            </div>
+            <a class="search_submit" id="butSearch" href="javascript:;" style="color: #dc332d;line-height: 52px;font-size: 16px;display: block;float:right;margin-right: 15px;">搜&nbsp索
+            </a>
+        </h1>
+        <!--document.getElementById('fade').style.display='none'-->
+        <a class="daohangguanbi" href="javascript:void(0)"
+           onclick="document.getElementById('light').style.display='none';"><img width="30" height="30" src="statics/templates/yungou/images/fanhui1.png"></a>
+<!--
+        <div class="fr head-r" style="position: absolute;right: 0px;top: 0px;">
+
+            <a href="../../../index.php/mobile/user/login" class="z-Member"></a>
+        
+            <a href="../../../index.php/mobile/mobile/" class="z-shop" style="background-position: 12px -73px;"></a>
+
+        </div>
+-->
+    </header>
+            <script>
+            document.onkeydown = function(event)
+
+            {
+
+                e = event ? event : (window.event ? window.event : null);
+
+                ss = document.getElementById('txtSearch').value;
+
+                if (e.keyCode == 13 && ss != "") {
+
+                    window.location.href = "index.php/mobile/mobile/search/" + $("#txtSearch").val();
+
+                }
+
+            }
+
+
+
+            $(function() {
+
+                $("#txtSearch").focus(function() {
+
+                    $("#txtSearch").css({
+                        background: "#fff"
+                    });
+
+                    $(this).attr("placeholder", "");
+
+                });
+
+                $("#txtSearch").blur(function() {
+
+                    $("#txtSearch").css({
+                        background: "#FFF"
+                    });
+
+                    $(this).attr("placeholder", "输入'购物卡'试一试");
+
+                });
+
+                $("#butSearch").click(function() {
+
+                    var val1 = "购物卡"
+
+                    if ($("#txtSearch").val() == "") {
+
+                        window.location.href = "index.php/mobile/mobile/search/" + val1;
+
+                    } else
+
+                    if ($("#txtSearch").val() == $("#txtSearch").val()) {
+
+                        window.location.href = "index.php/mobile/mobile/search/" + $("#txtSearch").val();
+
+                    }
+
+                });
+
+            });
+            </script>
+            <style>
+                .remen li{
+                    width:23%;
+                    margin: 10px 5%;
+                    float: left;
+                    height: 32px;
+                    line-height: 32px;
+                    text-align: center;
+                    color: #666;
+                    border: 1px solid #dcdcdc;
+
+                }
+                .remen li:hover{
+                    background: #dcdcdc;
+                    color:#666;
+
+                }
+            </style>
+            <div style="height: 40px;line-height: 40px;font-size: 16px;background: #dcdcdc;border-bottom:1px solid #ccc;color: #666;text-align: center;clear: both;">热门搜索</div>
+            <div class="remen">
+                <ul>
+                    <li><a href="index.php/mobile/mobile/search/_25E8_258B_25B9_25E6_259E_259C">苹果</a></li>
+                    <li><a href="index.php/mobile/mobile/search/_25E5_25B0_258F_25E7_25B1_25B3">小米</a></li>
+                    <li><a href="index.php/mobile/mobile/search/_25E5_25B9_25B3_25E6_259D_25BF">平板电脑</a></li>
+                    <li><a href="index.php/mobile/mobile/search/_25E6_2595_25B0_25E7_25A0_2581">数码</a></li>
+                    <li><a href="index.php/mobile/mobile/search/_25E8_25B4_25AD_25E7_2589_25A9_25E5_258D_25A1">购物卡</a></li>
+                    <li><a href="index.php/mobile/mobile/search/_25E8_25AF_259D_25E8_25B4_25B9">话费</a></li>
+                </ul>
+            </div>
+            <div style="height: 40px;line-height: 40px;font-size: 16px;background: #dcdcdc;border-bottom:1px solid #ccc;border-top:1px solid #ccc;color: #666;text-align: center;clear: both;">分类搜索</div>
+<div class="daohangleft">
+    <div class="dhbj">
+        <div>
+            <ul>
+                                    <li>
+                    <a class="liebiao" href="index.php/mobile/mobile/fen/15">
+                        <img src="statics/uploads/cateimg/20150821/81212741158754.png" alt="">
+                        <span>其他商品</span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="liebiao" href="index.php/mobile/mobile/fen/18">
+                        <img src="statics/uploads/cateimg/20150821/22065264158707.png" alt="">
+                        <span>综合购物</span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="liebiao" href="index.php/mobile/mobile/fen/17">
+                        <img src="statics/uploads/cateimg/20150821/77928723158582.png" alt="">
+                        <span>潮流新品</span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="liebiao" href="index.php/mobile/mobile/fen/14">
+                        <img src="statics/uploads/cateimg/20150821/93917600158092.png" alt="">
+                        <span>手机平板</span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="liebiao" href="index.php/mobile/mobile/fen/13">
+                        <img src="statics/uploads/cateimg/20150821/71565047158359.png" alt="">
+                        <span>电脑</span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="liebiao" href="index.php/mobile/mobile/fen/6">
+                        <img src="statics/uploads/cateimg/20150821/10514407158491.png" alt="">
+                        <span>饮食天地</span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="liebiao" href="index.php/mobile/mobile/fen/12">
+                        <img src="statics/uploads/cateimg/20150821/83980735158378.png" alt="">
+                        <span>数码影像</span>
+                    </a>
+                </li>
+                            <li>
+                    <a class="liebiao" href="index.php/mobile/mobile/fen/5">
+                        <img src="statics/uploads/cateimg/20150821/22411143158430.png" alt="">
+                        <span>女性时尚</span>
+                    </a>
+                </li>
+                                </ul>
+        </div>
+    </div>
+
+</div>
+
+</div>
+<header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
+
+<h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
+    <span style="display: block;height: 49px;line-height: 49px;">
+      <a  ></a>
+    </span>
+    <!--宝藏世界-->
+</h1>
+    <!--document.getElementById('fade').style.display='block'-->
+    <!--href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';"-->
+<a class="cefenlei" ></a>
+
+
+    <div class="fr head-r" style="position: absolute;right: 6px;top: 10px;">
+
+
+<a href="index.php/mobile/home/default.htm" class="z-shop" style="background-position: -5px 0px;"></a>
+
+</div>
+
+</header>
+
+    <div class="container" style="position: relative;top: 49px; clear: both;">
+        <main class="db-main db-main-index">
+            <!-- 焦点图 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="index_shop_ad">
+                    <div class="swiper-slide">
+                        <a><img alt="手机ad3" src="statics/uploads/banner/1.jpg"></a>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination swiper-pagination-clickable">
+                    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+                    <span class="swiper-pagination-bullet"></span>
+                </div>
+            </div>
+            <script>
+                var  G_UPLOAD_PATH =localStorage.getItem('baseUrlServer') +"/statics/uploads/";
+                $.ajax({
+                    type: "POST",
+                    dataType: "json",
+                    url:  localStorage.getItem('baseUrlServer') + "/index.php/mobile/mobile/index" ,
+                    data: {actions:"shop_ad"},
+                    success: function (data) {
+                        console.log("index_shop_ad",data);
+                        var index_shop_ad = "";
+                        var c278 ="swiper-slide-active";
+                        for (var c in data ) {
+                            //href="'+ data[c].link  +'"
+
+                            index_shop_ad +='<div class="swiper-slide '+c278+'"><a ><img alt="'+ data[c].title+'" src="'+ G_UPLOAD_PATH+''+data[c].img+'"></a></div>';
+                            c278= "";
+                        }
+
+
+                        $("#index_shop_ad").html(index_shop_ad);
+                        localStorage.setItem('index_shop_ad',index_shop_ad);
+                        //index_shop_ad
+
+                        var mySwiper = new Swiper('.swiper-container', {
+                            autoplay: 5000, //可选选项，自动滑动
+                            pagination: '.swiper-pagination',
+                            paginationClickable: true,
+                        })
+                    },
+                    error : function() {  }
+                });
+
+            </script>
+            <div class="banner_top" style="margin-top: 10px;">
+                <ul>
+                    <li class="qian">
+                        <a href="index.php/mobile/home/userqiandao.html"> <em>签到</em>
+                        </a>
+                    </li>
+                    <li class="shai">
+                        <a href="index.php/mobile/home/userbuylist.html"> <em>夺宝记录</em>
+                        </a>
+                    </li>
+                    <li class="chong">
+                        <a href="index.php/mobile/home/userrecharge.html">
+                            <em>充值</em>
+                        </a>
+                    </li>
+                    <li class="new">
+                        <a href="index.php/mobile/mobile/about.html">
+                            <em>帮助</em>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <a id="gd" href="default.htm"></a>
+            <div class="zxjx">
+                                <div class="zxjx_1" style="position: relative;"> <i></i>
+                    <div id="demo" style="overflow:hidden;height:30px;width:80%;line-height: 30px;">
+                        <ul id="demo1" class="index_tz">
+
+                                                    </ul>
+                        <div id="demo2"></div>
+                    </div>
+                    <div style="position: absolute;width: 40px;right: 3px;top: 9px;">
+                        <a style="color: #666;" href="index.php/mobile/mobile/gonggao.htm">更多>></a>
+                    </div>
+                </div>
+                <script>
+
+
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: localStorage.getItem('baseUrlServer') + "/index.php/mobile/mobile/ajaxServerByOne" ,
+                        data: {actions:"tz"},
+                        success: function (data) {
+
+                            var index_tz = "";
+                            for (var c in data ) {
+                                    //href='+localStorage.getItem('baseUrlServer')+'"/index.php/mobile/mobile/gonggaoxq/'+data[c].id+'"
+                                index_tz+='<li><a href="index.php/mobile/mobile/gonggao.htm" >'
+                                    +data[c].title+'</a>  </li>';
+
+                            }
+                            $(".index_tz").html(index_tz);
+                        },
+                        error : function() {  }
+                    });
+
+
+                var speed = 60
+                var demo = document.getElementById("demo");
+                var demo2 = document.getElementById("demo2");
+                var demo1 = document.getElementById("demo1");
+                demo2.innerHTML = demo1.innerHTML
+
+                function Marquee() {
+                    if (demo2.offsetTop - demo.scrollTop <= 0)
+                        demo.scrollTop -= demo1.offsetHeight
+                    else {
+                        demo.scrollTop++
+                    }
+                }
+                var MyMar = setInterval(Marquee, speed)
+                demo.onmouseover = function() {
+                    clearInterval(MyMar)
+                }
+                demo.onmouseout = function() {
+                    MyMar = setInterval(Marquee, speed)
+                }
+                </script>
+                <!--<a style="border-bottom: 1px solid #dcdcdc;" href="index.php/mobile/mobile/lottery.html">-->
+                    <!--最新揭晓-->
+                    <!--<label style="position:absolute; right:1rem; cursor:pointer;">显示全部&nbsp;></label>-->
+                <!--</a>-->
+                <ul class="ul" style="border-right: 1px solid #dcdcdc;">
+                    <script>
+                    (function() {
+                        DuoBao.refresh_prize = function refresh_prize() {
+                            var $el = $($(this).data('dom_id'));
+                            $.get($el.attr('title'), {
+                                raw_only: 'true'
+                            }, function(data) {
+                                $el.html(data);
+                            });
+                        };
+
+                    })();
+                    </script>
+                                    </ul>
+            </div>
+            <style>
+                #fldh{position: relative;z-index: 999;width: 100%;}
+
+            </style>
+            <div class="tabs-wrap" style="min-height:1000px;">
+                <div id="fldh" class="zxjx" style="border-bottom: 1px solid #dcdcdc;">
+
+                    <ul class="lbul" id="divGoodsNav">
+                        <li id="jiexiaos" class="current" order="10">
+                            <a href="javascript:;">即将揭晓</a>
+                        </li>
+                        <li class="" order="20">
+                            <a href="javascript:;">最快</a>
+                        </li>
+                        <li class="" order="30">
+                            <a href="javascript:;">高价</a>
+                        </li>
+                        <li class="" order="40">
+                            <a href="javascript:;">低价</a>
+                        </li>
+                        <li class="fenlel" style="border-left: 1px solid #dcdcdc;" order="">
+                            <a style="color: #999;" href="index.php/mobile/mobile/glist.html"><span class="sh"><i></i><i
+                                    style="margin-top: 3px;"></i><i style="margin-top: 3px;"></i></span>所有</a>
+                            <!--<dl style="display:none;background: #fff;">-->
+                                <!--<div class="jiantou"></div>-->
+                                <!--<dd class="a1"><a href="index.php/mobile/mobile/glist.html"><img-->
+                                        <!--style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;"-->
+                                        <!--src="statics/templates/yungou/images/mobile/moren.png" alt="">全部分类</a></dd>-->
+                                <!--<dd class="a1"><a href="index.php/mobile/mobile/fen/15"><img-->
+                                        <!--style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;"-->
+                                        <!--src="statics/uploads/cateimg/20150821/81212741158754.png"><span>其他商品</span></a>-->
+                                <!--</dd>-->
+                                <!--<dd class="a1"><a href="index.php/mobile/mobile/fen/18"><img-->
+                                        <!--style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;"-->
+                                        <!--src="statics/uploads/cateimg/20150821/22065264158707.png"><span>综合购物</span></a>-->
+                                <!--</dd>-->
+                                <!--<dd class="a1"><a href="index.php/mobile/mobile/fen/17"><img-->
+                                        <!--style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;"-->
+                                        <!--src="statics/uploads/cateimg/20150821/77928723158582.png"><span>潮流新品</span></a>-->
+                                <!--</dd>-->
+                                <!--<dd class="a1"><a href="index.php/mobile/mobile/fen/14"><img-->
+                                        <!--style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;"-->
+                                        <!--src="statics/uploads/cateimg/20150821/93917600158092.png"><span>手机平板</span></a>-->
+                                <!--</dd>-->
+                                <!--<dd class="a1"><a href="index.php/mobile/mobile/fen/13"><img-->
+                                        <!--style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;"-->
+                                        <!--src="statics/uploads/cateimg/20150821/71565047158359.png"><span>电脑</span></a>-->
+                                <!--</dd>-->
+                                <!--<dd class="a1"><a href="index.php/mobile/mobile/fen/6"><img-->
+                                        <!--style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;"-->
+                                        <!--src="statics/uploads/cateimg/20150821/10514407158491.png"><span>饮食天地</span></a>-->
+                                <!--</dd>-->
+                                <!--<dd class="a1"><a href="index.php/mobile/mobile/fen/12"><img-->
+                                        <!--style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;"-->
+                                        <!--src="statics/uploads/cateimg/20150821/83980735158378.png"><span>数码影像</span></a>-->
+                                <!--</dd>-->
+                                <!--<dd class="a1"><a href="index.php/mobile/mobile/fen/5"><img-->
+                                        <!--style="width: 30px;height: 30px;border-radius: 3px;float: left;margin:10px 5px 0 0;"-->
+                                        <!--src="statics/uploads/cateimg/20150821/22411143158430.png"><span>女性时尚</span></a>-->
+                                <!--</dd>-->
+                            <!--</dl>-->
+                        </li>
+                    </ul>
+                </div>
+                <div class="goodsList" id="goodsList_data" style="clear: both;">
+                    <div id="divGoodsLoading" class="loading" style="display:none;height: 80px;">
+                    </div>
+                    <a id="btnLoadMore" class="loading" href="javascript:;" style="display:none;border: none!important;"> <i class="jiazai"></i> 正在加载...
+                    </a>
+                    <a id="btnLoadMore2" class="loading" style="display:none; padding-top: 0px;">~~木有更多商品了~~</a>
+                    <a id="btnLoadMore3" class="loading" style="display:none; padding-top: 0px;">~~木有更多商品了~~</a>
+                </div>
+            </div>
+            <input id="urladdress" value="" type="hidden" />
+            <input id="pagenum" value="" type="hidden" />
+        </main>
+        <script src="statics/templates/yungou/js/mobile/main.js"></script>
+    </div>
+     ﻿ <p>
+    <br />
+</p>
+<p>
+    <br />
+</p>
+<p>
+    <br />
+</p>
+<style>
+.footerdi .f_home i.cur {
+    background-position: 0 0 !important;
+}
+
+.footerdi .f_whole i.cur {
+    background-position: 0 -52px !important;
+}
+
+.footerdi .f_jiexiao i.cur {
+    background-position: 0 -222px !important;
+}
+
+.footerdi .f_car i.cur {
+    background-position: 0 -105px !important;
+}
+
+.footerdi .f_personal i.cur {
+    background-position: 0 -152px !important;
+}
+
+#btnGotoTop {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-top: 1px solid #4b4b4b;
+}
+
+#btnGotoTop1 {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+}
+
+#btnGotoTop .s1 {
+    background: url(statics/templates/yungou/images/mobile/fast-nav-new.png) 0 -163px no-repeat;
+    background-size: 21px auto;
+    margin: 9px auto;
+    display: block;
+    width: 21px;
+    height: 21px;
+}
+
+.smailnav {
+    position: fixed;
+    right: 0px;
+    bottom: 55px;
+    z-index: 99999999;
+    height: auto;
+}
+
+#top_div {
+    display: none;
+    width: 40px;
+    height: 80px;
+    background: #242424;
+    opacity: 0.8;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#top_div1 {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background: #242424;
+    opacity: 0.8;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#btnGotoTop1 .s2 {
+    background: url(statics/templates/yungou/images/mobile/fast-nav-new.png) 0 -129px no-repeat;
+    background-size: 21px auto;
+    margin: 9px auto;
+    display: block;
+    width: 21px;
+    height: 21px;
+}
+
+#btnGotoTop3 {
+    display: none;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: -209px;
+    padding: 0 10px;
+    background: #242424;
+    opacity: 0.7;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#btnGotoTop3 a {
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    padding: 0;
+    color: #fff;
+    clear: both;
+}
+
+#btnGotoTop3 .xb {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #242424;
+    border-left: 1px solid #242424;
+    border-top: 1px solid #242424;
+    -webkit-transform: rotate(45deg);
+    position: absolute;
+    bottom: -5px;
+    right: 10px;
+}
+
+#btnGotoTop3 a i {
+    background: url(statics/templates/yungou/images/mobile/fast-nav-new.png) 0 0px no-repeat;
+    width: 20px;
+    height: 20px;
+    margin: 10px 5px 0 0;
+    display: block;
+    vertical-align: middle;
+    float: left;
+    position: relative;
+    background-size: 25px;
+    left: 2px;
+}
+
+#btnGotoTop3 a em {
+    display: block;
+    float: left;
+    line-height: 42px;
+}
+
+#btnGotoTop3 .home {
+    border-bottom: 1px solid #4b4b4b;
+}
+
+#btnGotoTop3 .home i {
+    background-position: 0 1px;
+    background-size: 28px auto;
+    height: 22px;
+}
+
+#btnGotoTop3 .glist {
+    border-bottom: 1px solid #4b4b4b;
+}
+
+#btnGotoTop3 .glist i {
+    background-position: 0 -117px;
+    background-size: 19px;
+}
+
+#btnGotoTop3 .lottry {
+    border-bottom: 1px solid #4b4b4b;
+}
+
+#btnGotoTop3 .lottry i {
+    background-position: 0 -35px;
+    left: 0;
+}
+
+#btnGotoTop3 .user {
+    border-bottom: 1px solid #4b4b4b;
+}
+
+#btnGotoTop3 .user i {
+    background-position: 0 -113px;
+}
+
+#btnGotoTop3 .sx i {
+    background-position: 0 -213px;
+    background-size: 22px auto;
+}
+</style>
+<div class="footerdi" style="bottom: 0px;">
+    <ul>
+        <li class="f_home">
+            <a title="首页" > <i class="cur">&nbsp;</i> 首页
+            </a>
+        </li>
+        <li class="f_whole">
+            <a title="所有商品" href="index.php/mobile/mobile/glist.html"> <i class="">&nbsp;</i> 所有商品
+            </a>
+        </li>
+        <li class="f_jiexiao">
+            <a title="最新揭晓" href="index.php/mobile/mobile/lottery.html">
+                <i class="">&nbsp;</i> 最新揭晓
+            </a>
+        </li>
+        <li class="f_car">
+            <a title="首页" href="index.php/mobile/cart/cartlist.html">
+                <i id="btnCart" style="position: relative;" class="">&nbsp;</i> 购物车
+            </a>
+        </li>
+        <li class="f_personal">
+            <a title="我的夺宝" href="index.php/mobile/home/default.htm">
+                <i class="">&nbsp;</i> 我的夺宝
+            </a>
+        </li>
+    </ul>
+    <div class="smailnav">
+        <div id="btnGotoTop3" class="smailgb">
+            <a class="home"  >
+                <i></i> <em>首页</em>
+            </a>
+            <a class="glist" href="index.php/mobile/mobile/glist.html">
+                <i></i> <em>所有商品</em>
+            </a>
+            <a class="lottry" href="index.php/mobile/mobile/lottery.html">
+                <i></i>
+                <em>最新揭晓</em>
+            </a>
+            <a class="user" href="index.php/mobile/home/default.htm">
+                <i></i>
+                <em>我的夺宝</em>
+            </a>
+
+            <i class="xb"></i>
+        </div>
+        <!--<div id="top_div1">
+            <a id="btnGotoTop1" onclick="Show_Hidden(btnGotoTop3)">
+                <i class="s2"></i>
+            </a>
+        </div>-->
+        <div id="top_div" style="height: 40px">
+            <!-- <a id="btnGotoTop1" onclick="Show_Hidden(btnGotoTop3)">
+                <i class="s2"></i>
+            </a>-->
+            <a id="btnGotoTop" href="javascript:;">
+                <i class="s1"></i>
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript">
+    //返回顶部
+    $(function() {
+        $("#btnGotoTop").click(function() {
+            $("html,body").animate({
+                scrollTop: 0
+            }, 1500);
+        });
+    });
+
+    window.onscroll = function() {
+        var t = document.documentElement.scrollTop || document.body.scrollTop;
+        var top_div = document.getElementById("top_div");
+        var s = document.documentElement.scrollTop || document.body.scrollTop;
+        var top_div1 = document.getElementById("top_div1");
+        if (t >= 200) {
+            top_div.style.display = "block";
+        } else {
+            top_div.style.display = "none";
+        }
+        if (s >= 200) {
+            if(top_div1) top_div1.style.display = "none";
+        } else {
+             if(top_div1) top_div1.style.display = "block";
+        }
+
+    }
+
+    function Show_Hidden(btnGotoTop3) {
+        if (btnGotoTop3.style.display == "block") {
+            btnGotoTop3.style.display = 'none';
+        } else {
+            btnGotoTop3.style.display = 'block';
+        }
+    }
+    </script>
+</div>    <script type="text/javascript">
+   //打开页面加载数据
+window.onload=function(){
+    init_json("list/10");
+    //购物车数量
+    // $.getJSON(localStorage.getItem('baseUrlServer')+ '/index.php/mobile/ajax/cartnum',function(data){
+    //     if(data.num){
+    //         $("#btnCart").append('<em>'+data.num+'</em>');
+    //     }
+    // });
+    GetCartnum();
+
+}
+
+    //打开页面加载数据
+    function init_json(parm) {
+        $("#urladdress").val('');
+        $("#pagenum").val('');
+        $.getJSON(localStorage.getItem('baseUrlServer') + '/index.php/mobile/mobile/initajax/' + parm, function(data) {
+            $("#divGoodsLoading").css('display', 'none');
+            ShowIndeData(data,parm);
+
+        });
+    }
+   SHowListData();//立即显示数据
+   function   SHowListData(){
+       //    var goodsList_data =localStorage.getItem('goodsList_data');
+    var index_shop_ad_0 = localStorage.getItem('index_shop_ad');
+       if(index_shop_ad_0){
+           $("#index_shop_ad").html(index_shop_ad_0);
+       }
+      // if(goodsList_data){
+      //     $("#goodsList_data").html(goodsList_data);
+     //  }
+
+   }
+
+      function ShowIndeData(data,parm){
+        console.log(data,parm);
+          if (data[0].sum) {
+              var fg = parm.split("/");
+              $("#urladdress").val(fg[0] + '/' + fg[1]);
+              $("#pagenum").val(data[0].page);
+              for (var i = 0; i < data.length; i++) {
+                  var ul = '<ul><li>';
+                  ul += '<span id="' + data[i].id + '" class="z-Limg" style="position:relative;display:block;">' +
+                      '<img src="'+localStorage.getItem('baseUrlServer') +'statics/uploads/' + data[i].thumb + '"><div id="jiazhi1">价值：￥' + data[i].money + '</div></span>';
+                  ul += '<div style="margin-top:15px;" class="goodsListR">';
+                  ul += '<h2 id="' + data[i].id + '">(第' + data[i].qishu + '期)' + data[i].title + '</h2>';
+                  ul += '</div>';
+                  ul += '<div class="pRate item_bottom_container">';
+                  ul += '<div class="Progress-bar jdt_container" id="' + data[i].id + '">';
+                  ul += '<div style="color:#646464;margin-top:2px;">';
+                  var num =(data[i].canyurenshu / data[i].zongrenshu) * 100;
+                  num = num.toFixed(2);
+                  ul += '进度&nbsp;<label class="color_blue" id="jd">'+num+'%</label>';
+                  ul += '</div>';
+                  ul += '<p class="u-progress jdt" style="margin-left:0;"><span class="pgbar" style="width:' +num+ '%;"><span class="pging"></span></span></p></div>';
+                  ul += '<div class="buy_container"><div class="btn_buy">';
+                  ul += '<a class="add " codeid="' + data[i].id + '" href="javascript:;"></a>';
+                  ul += '</div></div></div></li></ul>';
+                  $("#divGoodsLoading").before(ul);
+              }
+              if (data[0].page <= data[0].sum) {
+                  $("#btnLoadMore").css('display', 'block');
+                  $("#btnLoadMore2").css('display', 'none');
+                  $("#btnLoadMore3").css('display', 'none');
+              } else if (data[0].page > data[0].sum) {
+                  $("#btnLoadMore").css('display', 'none');
+                  $("#btnLoadMore2").css('display', 'none');
+                  $("#btnLoadMore3").css('display', 'block');
+              }
+          } else {
+              $("#btnLoadMore").css('display', 'none');
+              $("#btnLoadMore2").css('display', 'block');
+              $("#btnLoadMore3").css('display', 'none');
+          }
+          localStorage.setItem('goodsList_data', $("#goodsList_data").html());
+          //
+
+      }
+
+
+
+
+    $(document).ready(function() {
+                //即将揭晓,人气,最新,价格 
+                $("#divGoodsNav li:not(:last)").click(function() {
+                    var l = $(this).index();
+                    $("#divGoodsNav li").removeClass().eq(l).addClass('current');
+                    var parm = $("#divGoodsNav li").eq(l).attr('order');
+                    $("#divGoodsLoading").css('display', 'block');
+                    $(".goodsList ul").remove();
+                    var init = init_json("list/" + parm);
+                });
+                //商品分类
+    var dl=$("#divGoodsNav dl"),
+        last=$("#divGoodsNav li:last"),
+        first=$("#divGoodsNav dd:first");
+    $("#divGoodsNav li:last a:first").click(function(){     
+        if(dl.css("display")=='none'){
+            dl.show();
+            last.addClass("gSort");
+            first.addClass("sOrange");          
+        }else{
+            dl.hide();
+            last.removeClass("gSort");
+            first.removeClass("sOrange");
+        }
+    });
+    $("#divGoodsNav  dd").click(function(){
+        var s=$(this).index();
+        var t=$("#divGoodsNav .gSort dd a").eq(s).html();
+        var id=$("#divGoodsNav .gSort dd a").eq(s).attr('id');
+        $("#divGoodsNav .gSort a:first").html(t+'<s class="arrowUp"></s>');
+        var l=$("#divGoodsNav .current").index(),
+            parm=$("#divGoodsNav li").eq(l).attr('order');
+        if(id){         
+            $("#divGoodsLoading").css('display','block');
+            $(".goodsList ul").remove();
+            glist_json(id+'/'+parm);
+        }else{
+            glist_json("list/"+parm);
+            $(".goodsList ul").remove();
+        }   
+        dl.hide();
+        last.removeClass("gSort");
+        first.removeClass("sOrange");
+    });
+                //加载更多
+                //自动加载
+                $(window).scroll(function() {
+                    if ($(document).height() - $(this).scrollTop() - $(this).height() < 1 && $('#btnLoadMore').css('display') != 'none') {
+                        var url = $("#urladdress").val(),
+                            page = $("#pagenum").val();
+                        init_json(url + '/' + page);
+                    }
+                });
+
+
+        
+    //添加到购物车
+    $(document).on("click",'.add',function(){
+        var codeid=$(this).attr('codeid');
+        var ShopId=codeid ;
+        var ShopNum=1;
+        var cartbs=null;//标识从哪里加的购物车
+        var shopis=0;          //0表示不存在  1表示存在
+        var Mcartlist=  localStorage.getItem('Cartlist');
+        console.log("Mcartlist",Mcartlist);
+        if(Mcartlist){
+            Mcartlist = JSON.parse(Mcartlist);
+        }
+
+        if(ShopId==0 || ShopNum==0){
+            //  $cart['code']=1;   //表示添加失败
+            addsuccess('添加失败');
+        }else{
+            if(Mcartlist){
+                for(var key in Mcartlist ){
+                    var val = Mcartlist[key];
+                    if(key==ShopId){
+                        if(cartbs&& cartbs=='cart'){
+                            Mcartlist[ShopId]={};
+                            Mcartlist[ShopId]['num']=ShopNum;
+                        }else{
+                            Mcartlist[ShopId]={};
+                            Mcartlist[ShopId]['num']=val['num']+ShopNum;
+                        }
+                        shopis=1;
+                    }else{
+                        Mcartlist[key]['num']=val['num'];
+                    }
+                }
+            }else{
+                Mcartlist ={};
+                Mcartlist[ShopId]={};
+                Mcartlist[ShopId]['num']=ShopNum;
+            }
+            if(shopis==0){
+                Mcartlist[ShopId]={};
+
+                Mcartlist[ShopId]['num']=ShopNum;
+            }
+            // _setcookie('Cartlist',json_encode($Mcartlist),'');
+            console.log(Mcartlist);
+            Mcartlist = JSON.stringify(Mcartlist);
+            localStorage.setItem('Cartlist',Mcartlist);
+            //$cart['code']=0;   //表示添加成功
+            addsuccess('添加成功');
+        }
+
+        // $.getJSON(localStorage.getItem('baseUrlServer') + 'index.php/mobile/ajax/addShopCart/'+codeid+'/1',function(data){
+        //     if(data.code==1){
+        //         addsuccess('添加失败');
+        //     }else if(data.code==0){
+        //         addsuccess('添加成功');
+        //     }return false;
+        // });
+    });
+    function addsuccess(dat){
+        $("#pageDialogBG .Prompt").text("");
+        var w=($(window).width()-255)/2,
+            h=($(window).height()-45)/2;
+        $("#pageDialogBG").css({top:h,left:w,opacity:0.8});
+        $("#pageDialogBG").stop().fadeIn(1000);
+        $("#pageDialogBG .Prompt").append('<s></s>'+dat);
+        $("#pageDialogBG").fadeOut(1000);
+        //购物车数量
+        // $.getJSON(localStorage.getItem('baseUrlServer') + '/index.php/mobile/ajax/cartnum',function(data){
+        //     $("#btnCart").append('<em>'+data.num+'</em>');
+        // });
+
+        GetCartnum();
+    }
+    //跳转页面
+    var gt='.goodsList span,.goodsList h2,.goodsList .Progress-bar';
+    //警告:本頁面無法跳轉 E23456
+
+});
+    //分类悬浮js
+/*  
+    window.onscroll = function() {
+        var w = document.documentElement.scrollTop || document.body.scrollTop;
+        var fldh = document.getElementById("fldh");
+        if (w >= 200) {
+            fldh.style.position = "fixed";
+            fldh.style.top = "49px";
+            fldh.style.width = "100%";
+        }else{
+            fldh.style.position = "relative";
+        }
+
+    }
+    */
+
+
+   function GetCartnum() {
+       var Mcartlist =  localStorage.getItem('Cartlist');
+       console.log("Mcartlist",Mcartlist);
+       if(Mcartlist){
+           Mcartlist = JSON.parse(Mcartlist);
+       }
+       var cartnum = {};
+       if(Mcartlist){
+           cartnum['code']=0;
+           cartnum['num']=0;
+           for(var key in Mcartlist){
+               cartnum['num']++ ;
+           }
+       }else{
+           cartnum['code']=1;
+           cartnum['num']=0;
+       }
+       //var_dump($Mcartlist);
+       //echo json_encode($cartnum);
+       $("#btnCart").append('<em>'+cartnum.num+'</em>');
+   }
+
+
+    </script>
+</body>
+
+</html>
+<div id="pageDialogBG" class="pageDialogBG">
+    <div class="Prompt"></div>
+</div>
+
+<ul class="contact-public">
+
+<!--<a   href="http://wpa.qq.com/msgrd?v=3&uin=169300497&site=qq&menu=yes&xapp-target=qq">-->
+<!--联-->
+<!--<br>-->
+<!--系-->
+<!--<br>-->
+<!--客-->
+<!--<br>服</a>-->
+<!--</ul>-->
+
+<input name="hidLineLink" type="hidden" id="hidLineLink" value="../../../index.php/mobile/mobile/" />
+
+</ul>
+<script>
+    GetMyBaseInfo() ;
+    function GetMyBaseInfo() {
+        var uid = localStorage.getItem('uid') ;
+        var ushell = localStorage.getItem('ushell') ;
+        if(uid||ushell){
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: localStorage.getItem('baseUrlServer') + "/index.php/mobile/home" ,
+                data: {
+                    uid:uid,
+                    ushell:ushell,
+                    actions:"ajax"
+                },
+                success: function (data) {
+                    if(data.login){
+                        localStorage.setItem('userinfo', JSON.stringify(data));
+                    }else{
+                        localStorage.removeItem("uid");
+                        localStorage.removeItem("ushell");
+                        localStorage.removeItem("userinfo");
+                    }
+                },
+                error : function() {  }
+            });
+        }
+    }
+
+</script>

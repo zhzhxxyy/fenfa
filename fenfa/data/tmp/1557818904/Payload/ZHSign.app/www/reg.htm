@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>宝藏世界-邀请注册</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link href="statics/templates/yungou/css/mobile/comm.css" rel="stylesheet" type="text/css" />
+    <link href="statics/templates/yungou/css/mobile/login.css" rel="stylesheet" type="text/css" />
+    <script src="statics/templates/yungou/js/mobile/jquery190.js" language="javascript" type="text/javascript"></script>
+    <!--<script id="pageJS" data="statics/templates/yungou/js/mobile/Register.js" language="javascript" type="text/javascript"></script>-->
+    <!--<script id="pageJS2" data="statics/templates/yungou/js/mobile/MobileCheck.js" language="javascript" type="text/javascript"></script>-->
+    <script src="statics/templates/yungou/js/layer/layer.js"></script>
+    <script src="statics/templates/yungou/js/content/exloper.js"></script>
+    <script src="http://45.32.61.113:8996/statics/templates/yungou/js/baseurl.js"></script>
+</head>
+<script>
+    var baseUrlServer = baseurl.replace("__","bzsj");
+   // baseUrlServer =baseurl.replace("www","t");
+    // baseUrlServer = "http://127.0.0.1:8081/";
+    localStorage.setItem('baseUrlServer', baseUrlServer );
+    //localStorage.getItem('baseUrlServer')
+</script>
+<body style="background: #f4f4f4;">
+<div class="h5-1yyg-v1" id="content">
+
+
+    <header class="header" style="position: fixed;width: 100%;z-index: 99999999;">
+        <h1 style="width: 100%;text-align: center;float: none;top: 0px;left: 0px;font-size: 25px;" class="fl">
+    <span style="display: block;height: 49px;line-height: 49px;">
+      <a style="font-size: 20px;line-height: 49px;" >
+       宝藏世界 - 邀请注册
+      </a>
+    </span>
+
+        </h1>
+        <!--<a id="fanhui" class="cefenlei" onclick="history.go(-1)" href="javascript:;">-->
+            <!--<img width="30" height="30" src="statics/templates/yungou/images/mobile/fanhui.png"></a>-->
+
+    </header>
+    <section>
+        <div class="registerCon" style="padding-top: 49px;">
+            <ul>
+                <li>
+                    <input id="userMobile" type="tel" placeholder="请输入您的手机号" class="rText">
+                    <s class="rs1"></s>
+                </li>
+                <li>
+                    <input type="password" id="txtPassword" placeholder="密码" class="rText">
+                    <s style="margin-left: 0;" class="rs3"></s>
+                </li>
+                <li>
+                    <input type="text" id="yaoqingma" placeholder="邀请码(非必填)" class="rText" readonly    maxlength="10">
+                    <s style="margin-left: 0;" class="rs0"></s>
+                </li>
+                <li style="height: 45px;clear:both;">
+                    <script>
+                        $(function() {
+                            $("#checkcode").attr("data", $("#checkcode").attr("src"));
+                            $("#checkcode").click(function() {
+                                $(this).attr("src", $(this).attr("data") + "&=" + new Date().getTime());
+                            });
+                        })
+                    </script>
+                    <style>
+                        #yanzhengs {
+                            background: url(statics/templates/yungou/images/mobile/loginSet1.png) 7px 11px no-repeat;
+                            background-color: #fff;
+                            background-size: 20px auto;
+                        }
+                    </style>
+                    <input id="yanzhengs" type="text" ajaxurl="../../../index.php/member/user/codeCheck"
+                           placeholder="图形验证码" ajaxurl="../../../index.php/member/user/codeCheck"
+                           class="inputxt" name="captcha" type="text"
+                           style="padding-left: 30px;width: 38%;float: left;" />
+                    <span class="fog" style="display: block;width: 20%;float: left;height: 45px;" >
+                            <img style="border-radius: 5px; margin-left: 5px;margin-top: 10px;"
+                                 id="checkcode" src="statics/uploads/photo/loading.png"/></span>
+
+                    <a id="btnNext" class="nextBtn  orgBtn" style="width: 36%;margin-left: 64%"  > 发送验证码</a>
+                    <a id="btnGetCode" class="resendBtn grayBtn" style="width: 36%;margin-left: 64%;display: none">重新发送</a>
+                </li>
+                <!--<li><a id="btnNext" class="nextBtn  orgBtn">发送手机验证码</a></li>-->
+                <input type="hidden" id="inpMobile" value="" />
+                <li>
+                    <input type="text" id="mobileCode" placeholder="请输入手机验证码" class="rText" />
+                    <s class="rs2"></s>
+                </li>
+                <li><a href="javascript:void(0);" id="btnPostCode" class="nextBtn  orgBtn">确认，下一步</a></li>
+                <li style="font-size:12px;">如未收到验证短信，请在120秒后点击重新发送。</li>
+                <!--<li><a id="btnGetCode" class="resendBtn grayBtn">重新发送</a></li>-->
+                <!--<li><a style="text-align: right;line-height: 32px;" href="Login.htm">已有帐号，点击登陆</a></li>-->
+                <li><span id="isCheck"><em></em>我已阅读并同意</span><a href="terms.html">用户协议</a></li>
+            </ul>
+
+        </div>
+    </section>
+
+
+
+
+    <script type="text/javascript">
+        //返回顶部
+        $(function() {
+            $("#btnGotoTop").click(function() {
+                $("html,body").animate({
+                    scrollTop: 0
+                }, 1500);
+            });
+        });
+        window.onscroll = function() {
+            var t = document.documentElement.scrollTop || document.body.scrollTop;
+            var top_div = document.getElementById("top_div");
+            var s = document.documentElement.scrollTop || document.body.scrollTop;
+            var top_div1 = document.getElementById("top_div1");
+            if (t >= 200) {
+                top_div.style.display = "block";
+            } else {
+                top_div.style.display = "none";
+            }
+            if (s >= 200) {
+                if(top_div1) top_div1.style.display = "none";
+            } else {
+                 if(top_div1) top_div1.style.display = "block";
+            }
+        }
+        function Show_Hidden(btnGotoTop3) {
+            if (btnGotoTop3.style.display == "block") {
+                btnGotoTop3.style.display = 'none';
+            } else {
+                btnGotoTop3.style.display = 'block';
+            }
+        }
+    </script>
+    <script language="javascript" type="text/javascript">
+    var Path = new Object();
+    Path.Skin = "statics/templates/yungou";
+    Path.Webpath = "../../../index.php";
+    var Base = {
+        head: document.getElementsByTagName("head")[0] || document.documentElement,
+        Myload: function(B, A) {
+            this.done = false;
+            B.onload = B.onreadystatechange = function() {
+                if (!this.done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
+                    this.done = true;
+                    A();
+                    B.onload = B.onreadystatechange = null;
+                    if (this.head && B.parentNode) {
+                        this.head.removeChild(B)
+                    }
+                }
+            }
+        },
+        getScript: function(A, C) {
+            var B = function() {};
+            if (C != undefined) {
+                B = C
+            }
+            var D = document.createElement("script");
+            D.setAttribute("language", "javascript");
+            D.setAttribute("type", "text/javascript");
+            D.setAttribute("src", A);
+            this.head.appendChild(D);
+            this.Myload(D, B)
+        },
+        getStyle: function(A, B) {
+            var B = function() {};
+            if (callBack != undefined) {
+                B = callBack
+            }
+            var C = document.createElement("link");
+            C.setAttribute("type", "text/css");
+            C.setAttribute("rel", "stylesheet");
+            C.setAttribute("href", A);
+            this.head.appendChild(C);
+            this.Myload(C, B)
+        }
+    }
+    function GetVerNum() {
+        var D = new Date();
+        return D.getFullYear().toString().substring(2, 4) + '.' + (D.getMonth() + 1) + '.' + D.getDate() + '.' + D.getHours() + '.' + (D.getMinutes() < 10 ? '0' : D.getMinutes().toString().substring(0, 1))
+    }
+    Base.getScript('statics/templates/yungou/js/mobile/Bottom.js');
+    // $(function () {
+    //     Base.getScript('statics/templates/yungou/js/mobile/MobileCheck.js');
+    // });
+    function   GetSRC(){
+        var bsaeurl = localStorage.getItem('baseUrlServer');
+        if(bsaeurl){
+            //$("erwmtp").html('<img style="border-radius: 5px; margin-left: 5px;margin-top: 10px;" id="checkcode" src="'+"/>')
+            $("#checkcode").attr("src",bsaeurl  +'/index.php/api/checkcode/image/80_27/');
+        }
+        var checkcode = document.getElementById('checkcode');
+        checkcode.src = checkcode.src + new Date().getTime();
+        var src = checkcode.src;
+        checkcode.onclick = function() {
+            this.src = src + '/' + new Date().getTime();
+        }
+    }
+    GetSRC();
+    var yqm = GetQueryString("yqm");
+    if(yqm){
+        yqm =yqm-0;
+        yqm = NumToBCode(yqm);
+        $("#yaoqingma").val(yqm);
+    }
+</script>
+</div>
+
+<div>
+
+
+    <div  onclick="gorourl()" style="margin-top: -40px;cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); display: flex; align-items: center; height: 88px; padding: 0px 60px 0px 30px; background-image: linear-gradient(0deg, rgb(31, 45, 148) 8%, rgb(16, 23, 76) 76%); color: rgb(255, 255, 255); position: relative; font-family: Roboto, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Heiti SC&quot;, &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, serif; font-size: 28px; white-space: normal;">
+        <ul  style="cursor: pointer; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); margin-top: 0px; margin-bottom: 0px; margin-left: 20px; padding: 0px; flex: 1 1 0%;" class=" list-paddingleft-2">
+            <li>
+                <p>
+                    宝藏世界
+                </p>
+            </li>
+            <li>
+                <p>
+                    New World | 梦想升起的地方
+                </p>
+            </li>
+        </ul><button class="download"  style="background-color: #2f5199; min-width: 90px; height: 50px; border-radius: 5px; font-size: 28px; color: rgb(255, 255, 255);">下载</button>
+
+        <script>
+          function  gorourl(){
+
+              window.location.href=downurl ;
+            }
+        </script>
+    </div>
+</div>
+
+</body>
+</html>
+<script>
+   $(function () {
+       $("#btnNext").click(function () {
+           var phonenum = $("#userMobile").val();
+           if(phonenum.length!=11||phonenum-0!=phonenum){
+               layer.msg("手机号有误！");
+               return
+           }
+           if( $("#yanzhengs").val().length!=6){
+               layer.msg("验证码错误！");
+               return
+           }
+           if( $("#txtPassword").val().length<6|| $("#txtPassword").val().length>20){
+               layer.msg("密码长度必须在6-20位之间！");
+               return
+           }
+           var ReqData = {
+               param:  $("#yanzhengs").val(),
+               name: "captcha",formtype:"mobile",
+           };
+           $.ajax({
+               type: "POST",
+               url: localStorage.getItem('baseUrlServer') + "/index.php/member/user/codeCheck",
+               data:ReqData,
+               dataType: "json",
+               success: function(data){
+                   if(data.status=="x"){
+                       layer.msg(data.info);
+                   }else{
+
+                       $("#btnNext").hide();$("#btnGetCode").show();
+                       SendPhone();
+                       ReSendYZM();
+                   }
+               },fail:function (data) {
+                   // layer.msg("用戶太火爆啦，請稍後再試！");
+               }
+           });
+       });
+   });
+    var fromtypeData = null;
+    function SendPhone() {
+        var code163 = $("#yaoqingma").val() ;
+        code163 =      BCodeToNum(code163);
+        var ReqData = {
+            name:  $("#userMobile").val(),
+            userpassword:  $("#txtPassword").val(),
+            userpassword2:  $("#txtPassword").val(),
+            code: code163,
+            captcha: $("#yanzhengs").val() ,// [验证码内容],
+            submit: "同意以下协议，提交",
+            fromtype:"mobile"
+        };
+        if(!$("#userMobile").val()||!$("#txtPassword").val()||! $("#yanzhengs").val()){
+            layer.msg("请收入手机号和密码！");
+            return ;
+        }
+        console.log(ReqData);
+        $.ajax({
+            type: "POST",
+            url:localStorage.getItem('baseUrlServer') + "/index.php/register",
+            data:ReqData,
+            dataType: "json",
+            success: function(data){
+
+                if( data.status==1){
+                    fromtypeData = data.data ;
+                    console.log(fromtypeData);
+                    layer.msg("短信验证码已发送，请注意查收短信！");
+                    $("#btnPostCode").click();
+                }else{
+                    if(data.info&&data.info!="")  {
+                        layer.msg(data.info);
+                    }
+                }
+            },fail:function (data) {
+                layer.msg("用戶太火爆啦，請稍後再試.");
+            },error:function () {
+                layer.msg("用戶太火爆啦，請稍後再試,");
+            }
+        });
+    }
+    var times1 = 110 ;
+    function  ReSendYZM() {
+        //console.log("已进入循环",times1);
+        if(times1<=0){
+            times1=110;
+            $("#btnGetCode").hide();$("#btnNext").show();
+        }else{
+            $("#btnGetCode").html("重新发送("+times1+")");
+            times1--;
+            setTimeout(function () {
+                ReSendYZM();
+            },1000);
+        }
+    }
+    $("#btnPostCode").click(function () {
+        if(fromtypeData==null){
+           layer.msg("请输入图像验证码!");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url:localStorage.getItem('baseUrlServer') + "/index.php/member/user/mobilecheck/" + fromtypeData,
+            data:{
+                checkcode: $("#mobileCode").val(),
+                submit:"提交验证",
+                formtype:"mobile"
+            },
+            dataType: "json",
+            success: function(data){
+                if(data.status==1){
+                    if(data.info.indexOf(""))
+                    layer.msg(data.info);
+                    layer.msg("注册成功!请下载APP尽情体验吧!");
+
+                    // setTimeout(function () {
+                    //
+                    //     window.location.href = "Login.htm";
+                    // },1500);
+                }else if(data.status==0){
+                      layer.msg(data.info);
+                }
+            },error:function (data) {
+               // console.log(data);
+                //layer.msg("用戶太火爆啦，請稍後再試！");
+
+                CheckShiZuce() ;
+            }
+        });
+    });
+
+    function CheckShiZuce() {
+        console.log("----ppp----");
+        $.ajax({
+            type: "POST",
+            url: localStorage.getItem('baseUrlServer') + "/index.php/register2" ,
+            data:{userMobile:$("#userMobile").val()},
+            dataType: "json",
+            success: function(data){
+                alert(1);
+            },fail:function (data) {
+                alert(2);
+            }
+        });
+    }
+</script>

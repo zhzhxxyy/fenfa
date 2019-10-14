@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>UIRequiredDeviceCapabilities</key>
+		<array>
+			<string>armv7</string>
+		</array>
+		<key>CFBundleInfoDictionaryVersion</key>
+		<string>6.0</string>
+		<key>DTPlatformVersion</key>
+		<string>12.1</string>
+		<key>DTSDKName</key>
+		<string>iphoneos12.1</string>
+		<key>CFBundleName</key>
+		<string>helloworld</string>
+		<key>DTAppStoreToolsBuild</key>
+		<string>10B61</string>
+		<key>UIViewControllerBasedStatusBarAppearance</key><false/><key>CodePushDeploymentKey</key><string>_L50VXObpji-RJIb63wARBdrJ3N4090b2616-8c6c-4385-aa02-bc70f3f14b6b</string><key>CFBundleIcons</key><dict><key>CFBundlePrimaryIcon</key><dict><key>CFBundleIconFiles</key><array><string>AppIcon20x20</string><string>AppIcon29x29</string><string>AppIcon40x40</string><string>AppIcon60x60</string></array><key>CFBundleIconName</key><string>AppIcon</string></dict></dict><key>LSApplicationCategoryType</key><string></string><key>LSRequiresIPhoneOS</key><true/><key>CFBundleDisplayName</key><string>众彩在线</string><key>NSLocationWhenInUseUsageDescription</key><string></string><key>DTSDKBuild</key><string>16B91</string><key>CFBundleShortVersionString</key><string>1.0.0</string><key>CFBundleSupportedPlatforms</key><array><string>iPhoneOS</string></array><key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationPortrait</string></array><key>BuildMachineOSBuild</key><string>17G5019</string><key>DTPlatformBuild</key><string>16B91</string><key>CFBundlePackageType</key><string>APPL</string><key>MinimumOSVersion</key><string>8.0</string><key>CFBundleDevelopmentRegion</key><string>en</string><key>DTXcodeBuild</key><string>10B61</string><key>CFBundleVersion</key><string>1</string><key>UILaunchStoryboardName</key><string>LaunchScreen</string><key>UIDeviceFamily</key><array><integer>1</integer></array><key>CFBundleIdentifier</key><string>flyapp.comZCZX</string><key>DTXcode</key><string>1010</string><key>NSAppTransportSecurity</key><dict><key>NSAllowsArbitraryLoads</key><true/><key>NSExceptionDomains</key><dict><key>localhost</key><dict><key>NSExceptionAllowsInsecureHTTPLoads</key><true/></dict></dict></dict><key>CFBundleExecutable</key><string>helloworld</string><key>CFBundleSignature</key><string>????</string><key>DTPlatformName</key><string>iphoneos</string><key>DTCompiler</key><string>com.apple.compilers.llvm.clang.1_0</string></dict>
+</plist>

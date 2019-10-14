@@ -1,0 +1,10 @@
+#
+# robots.txt for Ear Music
+#
+
+User-agent: *
+Disallow: /data/
+Disallow: /source/
+Disallow: /static/
+Disallow: /admin.php
+Disallow: /install.php
